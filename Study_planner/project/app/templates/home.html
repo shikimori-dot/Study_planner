@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Planner</title>
+    <!-- Link to Bootstrap for responsive and modern styling -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Optional: Link to Google Fonts (for better typography) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+
+</head>
+<body>
+
+    <!-- Navbar: Navigation bar with links to different sections -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Study Planner</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/timetable">Timetable</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/analytics">Analytics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section: A welcoming section on the homepage -->
+    <header class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Welcome to Study Planner!</h1>
+            <p class="lead">Organize your study schedule, track progress, and stay on top of your academic goals.</p>
+            <a href="/timetable" class="btn btn-light btn-lg">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Main Content: Sections to highlight your app features -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Timetable</h5>
+                        <p class="card-text">Create and manage your study timetable. Stay organized with your academic schedule.</p>
+                        <a href="/timetable" class="btn btn-primary">View Timetable</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Analytics</h5>
+                        <p class="card-text">Track your study progress and get insights into your performance with interactive charts.</p>
+                        <a href="/analytics" class="btn btn-primary">View Analytics</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">About</h5>
+                        <p class="card-text">Learn more about Study Planner and how it can help you achieve your academic goals.</p>
+                        <a href="/about" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer: A simple footer for copyright and additional links -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Study Planner. All rights reserved.</p>
+        <p>Designed by Your Name</p>
+    </footer>
+
+    <!-- JavaScript for Bootstrap functionality (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Home</title>
+</head>
+<body>
+  <header>Welcome to Your Study Planner</header>
+  <div class="section">
+    <h1>Welcome</h1>
+    <p>This is your home page. Navigate to the timetable or analytics section to start planning and tracking your studies.</p>
+    <button class="button">Get Started</button>
+  </div>
+</body>

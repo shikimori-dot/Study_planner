@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Planner Analytics</title>
+
+    <!-- Link to external CSS framework (Bootstrap for styling) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Link to Chart.js library for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom CSS for styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 400px;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Page Header -->
+    <div class="container">
+        <h1 class="text-center">Study Planner Analytics</h1>
+        <p class="text-center">Visualize your study data and track progress over time.</p>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div class="container">
+        <div class="row">
+            <!-- Chart for Study Hours -->
+            <div class="col-md-6 chart-container">
+                <canvas id="studyHoursChart"></canvas>
+            </div>
+
+            <!-- Chart for Task Completion -->
+            <div class="col-md-6 chart-container">
+                <canvas id="taskCompletionChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Chart.js -->
+    <script>
+        // Data for Study Hours chart
+        const studyHoursData = {
+            labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
+            datasets: [{
+                label: "Study Hours",
+                data: [10, 15, 8, 12],
+                backgroundColor: "rgba(54, 162, 235, 0.6)",
+                borderColor: "rgba(54, 162, 235, 1)",
+                borderWidth: 1
+            }]
+        };
+
+        // Configuration for Study Hours chart
+        const studyHoursConfig = {
+            type: "line",
+            data: studyHoursData,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: "top",
+                    }
+                }
+            }
+        };
+
+        // Render Study Hours chart
+        new Chart(
+            document.getElementById("studyHoursChart"),
+            studyHoursConfig
+        );
+
+        // Data for Task Completion chart
+        const taskCompletionData = {
+            labels: ["Completed", "Pending", "Overdue"],
+            datasets: [{
+                label: "Task Completion",
+                data: [12, 5, 3],
+                backgroundColor: [
+                    "rgba(75, 192, 192, 0.6)",
+                    "rgba(255, 205, 86, 0.6)",
+                    "rgba(255, 99, 132, 0.6)"
+                ],
+                borderColor: [
+                    "rgba(75, 192, 192, 1)",
+                    "rgba(255, 205, 86, 1)",
+                    "rgba(255, 99, 132, 1)"
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        // Configuration for Task Completion chart
+        const taskCompletionConfig = {
+            type: "doughnut",
+            data: taskCompletionData,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: "top",
+                    }
+                }
+            }
+        };
+
+        // Render Task Completion chart
+        new Chart(
+            document.getElementById("taskCompletionChart"),
+            taskCompletionConfig
+        );
+    </script>
+
+</body>
+</html>

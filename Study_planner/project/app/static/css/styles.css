@@ -1,0 +1,62 @@
+/* Define color palette as CSS variables */
+:root {
+    --primary-green: #a8d5ba;
+    --primary-pink: #f2a9bd;
+    --primary-grey: #d3d3d3;
+    --primary-white: #ffffff;
+    --primary-blue: #89c2d9;
+    --font-color: #333333;
+    --highlight-color: #f2a9bd;
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    color: var(--font-color);
+    background-color: var(--primary-white);
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header Style */
+  header {
+    background-color: var(--primary-blue);
+    padding: 20px;
+    color: var(--primary-white);
+    text-align: center;
+    font-size: 1.5em;
+  }
+  
+  /* Page sections */
+  .section {
+    padding: 30px;
+    margin: 20px;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-grey);
+  }
+  
+  /* Buttons */
+  .button {
+    background-color: var(--primary-green);
+    color: var(--primary-white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-speed);
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: var(--highlight-color);
+  }
+  
+  /* Minimalistic cards for timetable/analytics */
+  .card {
+    background-color: var(--primary-grey);
+    border: 1px solid var(--primary-blue);
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: var(--border-radius);
+  }
+  

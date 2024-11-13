@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable - Study Planner</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Timetable</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/timetable/">Timetable</a></li>
+                <li><a href="/analytics/">Analytics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="timetable-section">
+        <h2>Your Study Timetable</h2>
+        
+        <!-- Timetable Form -->
+        <h3>Add a New Timetable Entry</h3>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save Timetable</button>
+        </form>
+
+        <!-- Display the Timetable Entries -->
+        <h3>Current Timetable</h3>
+        <ul>
+            {% for entry in timetable_entries %}
+                <li>{{ entry.subject }} on {{ entry.day_of_week }} from {{ entry.start_time }} to {{ entry.end_time }}</li>
+            {% empty %}
+                <p>No timetable entries found.</p>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+<div class="section">
+  <h2>Your Study Timetable</h2>
+  
+  <h3>Add a New Timetable Entry</h3>
+  <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button class="button" type="submit">Save Timetable</button>
+  </form>
+
+  <h3>Current Timetable</h3>
+  <div>
+      {% for entry in timetable_entries %}
+          <div class="card">{{ entry.subject }} on {{ entry.day_of_week }} from {{ entry.start_time }} to {{ entry.end_time }}</div>
+      {% empty %}
+          <p>No timetable entries found.</p>
+      {% endfor %}
+  </div>
+</div>
+</html>
